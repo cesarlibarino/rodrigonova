@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nutrirod | Nutrição Esportiva & Performance</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              orange: '#ff8200',
+              orangeHover: '#e67300',
+              green: '#466f4a',
+              greenDark: '#233829',
+              greenDeep: '#15241a',
+              gray: '#6c6d71',
+              graySoft: '#f0f0ee',
+              light: '#f8f5ef',
+              white: '#ffffff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8f5ef;
+      color: #233829;
+      overflow-x: hidden;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255,130,0,0.22), transparent 32%),
+        linear-gradient(115deg, rgba(21,36,26,0.96), rgba(70,111,74,0.90)),
+        url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section-pattern {
+      background-image:
+        radial-gradient(circle at top right, rgba(255,130,0,0.10), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(70,111,74,0.10), transparent 34%);
+    }
+
+    .logo-top {
+      width: 168px;
+      max-width: 46vw;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .logo-top { width: 138px; }
+    }
+
+    .btn-premium {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 130, 0, 0.28);
+    }
+
+    .card-hover {
+      transition: all .35s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(35, 56, 41, .10);
+    }
+
+    #mobile-menu { transition: 0.3s ease-in-out; transform-origin: top; }
+  </style>
+</head>
+<body>
+
+  <header class="fixed top-0 w-full z-50 bg-brand-green/95 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-brand-greenDeep/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 h-24 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center" aria-label="Nutrirod - início">
+        <img src="logo.png" alt="Nutrirod Nutricionista" class="logo-top" />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="#metodo" class="text-sm font-semibold tracking-wide text-white/78 hover:text-brand-orange transition">O Método</a>
+        <a href="#especialidades" class="text-sm font-semibold tracking-wide text-white/78 hover:text-brand-orange transition">Foco de Atendimento</a>
+        <a href="#sobre" class="text-sm font-semibold tracking-wide text-white/78 hover:text-brand-orange transition">O Nutri</a>
+        <a href="https://api.whatsapp.com/send/?phone=559191919567&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=20" target="_blank" class="btn-premium bg-brand-orange text-white px-7 py-3 rounded-full text-xs font-extrabold tracking-widest uppercase hover:bg-brand-orangeHover transition">
+          Agendar Consulta
+        </a>
+      </nav>
+
+      <button id="menu-toggle" class="lg:hidden text-white" aria-label="Abrir menu"><i data-lucide="menu" class="w-7 h-7"></i></button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-24 left-0 w-full bg-brand-greenDeep border-b border-white/10 flex-col p-8 gap-5 lg:hidden shadow-xl">
+      <a href="#metodo" class="mobile-link text-lg font-medium py-1 text-white/90">O Método</a>
+      <a href="#especialidades" class="mobile-link text-lg font-medium py-1 text-white/90">Foco de Atendimento</a>
+      <a href="#sobre" class="mobile-link text-lg font-medium py-1 text-white/90">O Nutri</a>
+      <a href="https://api.whatsapp.com/send/?phone=559191919567&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=20" target="_blank" class="bg-brand-orange text-white py-4 rounded-xl text-center font-bold tracking-wider uppercase text-sm">Agendar Consulta</a>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero-bg min-h-screen flex items-center pt-28 text-white">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 items-center gap-12 py-16">
+      <div class="lg:col-span-8">
+        <span class="inline-flex items-center gap-2 bg-white/10 text-brand-orange px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-8 border border-white/15 backdrop-blur-md">
+          <i data-lucide="dumbbell" class="w-4 h-4 text-brand-orange"></i> Alta Performance & Estética Avançada
+        </span>
+        <h1 class="font-serif text-5xl lg:text-7xl leading-[1.12] mb-6 font-light">
+          Construa seu melhor shape com <span class="italic text-brand-orange font-normal">estratégia e ciência.</span>
+        </h1>
+        <p class="text-lg text-white/75 mb-12 leading-relaxed max-w-2xl font-light">
+          Chega de tentar adivinhar o que comer. Tenha um direcionamento focado em ganho de massa muscular, definição real e queima de gordura sem passar fome, respeitando a sua rotina e seus treinos.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5">
+          <a href="https://api.whatsapp.com/send/?phone=559191919567&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=20" target="_blank" class="btn-premium bg-brand-orange text-white px-10 py-5 rounded-full font-extrabold text-center text-sm tracking-widest uppercase shadow-lg shadow-brand-orange/20 hover:bg-brand-orangeHover">
+            Agendar Minha Consulta
+          </a>
+          <a href="#metodo" class="px-10 py-5 rounded-full font-bold text-center text-sm tracking-widest uppercase border border-white/25 text-white hover:bg-white/10 transition">
+            Conhecer Método
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 bg-brand-light border-t border-brand-graySoft section-pattern" id="metodo">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-20">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-orange">Nutrição com direção</span>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light text-brand-greenDark mt-3 mb-5">O que está sabotando os seus resultados?</h2>
+        <p class="text-brand-gray font-light text-lg">Cortar carboidratos ou copiar a dieta dos outros só vai te fazer perder massa magra e passar raiva. Para mudar o corpo, a estratégia precisa ser cirúrgica.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-hover p-10 rounded-2xl bg-white border border-brand-graySoft shadow-sm hover:border-brand-orange/40 transition duration-300">
+          <div class="w-12 h-12 bg-brand-greenDark text-brand-orange rounded-xl flex items-center justify-center mb-8 shadow-md"><i data-lucide="trending-down"></i></div>
+          <h3 class="font-serif text-2xl font-normal mb-4 text-brand-greenDark">Efeito Sanfona</h3>
+          <p class="text-brand-gray font-light leading-relaxed text-sm">Passar dias passando fome para depois recuperar todo o peso perdido porque a dieta era impossível de manter a longo prazo.</p>
+        </div>
+        <div class="card-hover p-10 rounded-2xl bg-white border border-brand-graySoft shadow-sm hover:border-brand-orange/40 transition duration-300">
+          <div class="w-12 h-12 bg-brand-greenDark text-brand-orange rounded-xl flex items-center justify-center mb-8 shadow-md"><i data-lucide="battery-warning"></i></div>
+          <h3 class="font-serif text-2xl font-normal mb-4 text-brand-greenDark">Treino sem Rendimento</h3>
+          <p class="text-brand-gray font-light leading-relaxed text-sm">Se sentir exausto na academia e não conseguir evoluir cargas ou ganhar massa magra por falta do combustível correto na hora certa.</p>
+        </div>
+        <div class="card-hover p-10 rounded-2xl bg-white border border-brand-graySoft shadow-sm hover:border-brand-orange/40 transition duration-300">
+          <div class="w-12 h-12 bg-brand-greenDark text-brand-orange rounded-xl flex items-center justify-center mb-8 shadow-md"><i data-lucide="ban"></i></div>
+          <h3 class="font-serif text-2xl font-normal mb-4 text-brand-greenDark">Restrições Absurdas</h3>
+          <p class="text-brand-gray font-light leading-relaxed text-sm">Achar que para ter o corpo que deseja você precisa se isolar socialmente e nunca mais comer o que gosta com os amigos e família.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 bg-white border-t border-b border-brand-graySoft" id="especialidades">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-20">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-orange">Foco Estratégico</span>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light text-brand-greenDark mt-2">Áreas de Atuação</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="card-hover bg-brand-light p-10 rounded-2xl shadow-sm border border-brand-graySoft text-center">
+          <i data-lucide="target" class="w-10 h-10 text-brand-orange mx-auto mb-6"></i>
+          <h3 class="font-serif text-2xl font-normal text-brand-greenDark mb-3">Emagrecimento</h3>
+          <p class="text-brand-gray text-sm font-light leading-relaxed">Queima de gordura otimizada preservando a sua massa muscular e mantendo seus níveis de energia altos.</p>
+        </div>
+        <div class="card-hover bg-brand-light p-10 rounded-2xl shadow-sm border border-brand-graySoft text-center">
+          <i data-lucide="zap" class="w-10 h-10 text-brand-orange mx-auto mb-6"></i>
+          <h3 class="font-serif text-2xl font-normal text-brand-greenDark mb-3">Hipertrofia</h3>
+          <p class="text-brand-gray text-sm font-light leading-relaxed">Direcionamento focado em ganho de massa magra, força e preenchimento muscular baseado em nutrição esportiva de ponta.</p>
+        </div>
+        <div class="card-hover bg-brand-light p-10 rounded-2xl shadow-sm border border-brand-graySoft text-center">
+          <i data-lucide="activity" class="w-10 h-10 text-brand-orange mx-auto mb-6"></i>
+          <h3 class="font-serif text-2xl font-normal text-brand-greenDark mb-3">Performance</h3>
+          <p class="text-brand-gray text-sm font-light leading-relaxed">Ajuste fino de macronutrientes para elevar o seu rendimento diário nos treinos e acelerar a sua recuperação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 bg-brand-light" id="sobre">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -inset-4 bg-brand-green rounded-2xl -z-10"></div>
+        <div class="absolute -bottom-6 -right-6 w-28 h-28 bg-brand-orange rounded-2xl -z-10 opacity-90"></div>
+        <img src="img/rodrigo.webp" alt="Rodrigo Silva" class="rounded-xl w-full aspect-[4/5] object-cover shadow-xl bg-brand-graySoft"
+             onerror="this.src='https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1374&auto=format&fit=crop';">
+      </div>
+      <div class="lg:col-span-7">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-orange block mb-2">Resultados Sem Achismo</span>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light mb-8 text-brand-greenDark">Rodrigo Silva</h2>
+        <div class="space-y-6 text-brand-gray text-base font-light leading-relaxed">
+          <p>Como <strong class="text-brand-greenDark font-semibold">Nutricionista Esportivo</strong>, trabalho focado em gerar transformações corporais estéticas e de saúde sem fórmulas mágicas ou terrorismos nutricionais.</p>
+          <p>Meu foco é montar uma estratégia que se integre totalmente ao seu estilo de vida, potencializando seus resultados de definição, hipertrofia e bem-estar através de uma metodologia limpa, prática e eficaz.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-6 text-sm text-brand-greenDark font-semibold">
+            <div class="flex items-center gap-3"><i data-lucide="map-pin" class="text-brand-orange w-5 h-5"></i><span>Umarizal Office - Belém/PA</span></div>
+            <div class="flex items-center gap-3"><i data-lucide="globe" class="text-brand-orange w-5 h-5"></i><span>Consultas Presenciais e Online</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 bg-brand-greenDeep text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,130,0,0.22),transparent_45%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(70,111,74,0.40),transparent_46%)]"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <h2 class="font-serif text-4xl lg:text-6xl font-light mb-6">Quer transformar seus resultados?</h2>
+      <p class="text-white/65 text-lg lg:text-xl mb-12 font-light max-w-2xl mx-auto leading-relaxed">Dê o primeiro passo rumo ao shape e à performance que você deseja alcançar.</p>
+      <a href="https://api.whatsapp.com/send/?phone=559191919567&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=20" target="_blank" class="btn-premium inline-flex items-center gap-3 bg-brand-orange text-white px-12 py-5 rounded-full font-extrabold text-sm tracking-widest uppercase hover:bg-brand-orangeHover shadow-xl shadow-brand-orange/10">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar Minha Consulta
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-12 bg-brand-light border-t border-brand-graySoft text-center text-brand-gray text-xs tracking-wider uppercase">
+    <p>© 2026 Nutrirod — Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
+  </script>
+</body>
+</html>
